@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:letsgo/child_widgets/asscorewidget.dart';
+import 'package:letsgo/parent_widgets/profile_screen.dart';
 
 class SenatorCardWidget extends StatelessWidget {
   @override
@@ -42,7 +43,7 @@ class SenatorCardWidget extends StatelessWidget {
                       Text("Senator - (D)")
                     ],
                   ),
-                  ASScoreWidget()
+                  ASScoreWidget(90, fontSize: 12,)
                 ],
               ),
             ),
@@ -55,20 +56,5 @@ class SenatorCardWidget extends StatelessWidget {
   void pushProfileScreen(BuildContext context) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (_) => SenatorProfileScreen()));
-  }
-}
-
-class SenatorProfileScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: true,
-          leading: IconButton(icon: Icon(Icons.arrow_back_ios), onPressed: () => Navigator.pop(context, false),),
-        ),
-        body: Center(child: Text("Senator Profile Screen"),)
-      )
-    );
   }
 }

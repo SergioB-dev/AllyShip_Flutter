@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ASScoreWidget extends StatelessWidget {
-  const ASScoreWidget({
-    Key? key,
-  }) : super(key: key);
+  final int score;
+  double fontSize;
+
+  ASScoreWidget(this.score, {this.fontSize = 12.0});
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +17,14 @@ class ASScoreWidget extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(15),
             child: Text(
-              "90%",
+              "$score%",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
         ),
         Text(
           "Ally Score",
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSize),
         )
       ],
     );
